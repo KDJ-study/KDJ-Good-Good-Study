@@ -1,0 +1,30 @@
+git init
+git add   Study.txt
+git commit -m" I Love Study"
+git log  //历史记录
+git status //当前状态
+git reset --hard HEAD^
+git reset --hard 1094a //版本回退，查看提交历史，以便确定要回退到哪个版本
+git reflog //重返未来，查看命令历史，以便确定要回到未来的哪个版本
+cat Study.txt //查看文档内容
+
+
+Git管理的文件分为：工作区，版本库，版本库又分为暂存区stage和暂存区分支master(仓库)
+
+工作区>>>>暂存区>>>>仓库
+
+git add把文件从工作区>>>>暂存区，git commit把文件从暂存区>>>>仓库，
+
+git diff查看工作区和暂存区差异，
+
+git diff --cached查看暂存区和仓库差异，
+
+git diff HEAD 查看工作区和仓库的差异，
+
+git add的反向命令git checkout，撤销工作区修改，即把暂存区最新版本转移到工作区，
+
+git commit的反向命令git reset HEAD，就是把仓库最新版本转移到暂存区。工作区、版本库（add——stage暂存区、commit——master仓库）
+git checkout -- file//场景1：当你改乱了工作区某个文件的内容，想直接丢弃工作区的修改时
+
+git reset HEAD <file>//场景2：当你不但改乱了工作区某个文件的内容，还添加到了暂存区时，想丢弃修改，分两步，第二步按场景1操作。
+
